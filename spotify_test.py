@@ -5,7 +5,8 @@ from user_module import *
 good_songs = []
 
 # LOGIN SCREEN FUNCTIONS
-user_id = input('Username:\n>>> ')
+# user_id = input('Username:\n>>> ')
+user_id = "osnhoj" #need to do this as user input
 user = User(user_id)
 
 # INITIAL SEARCH FUNCTION

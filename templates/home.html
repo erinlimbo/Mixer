@@ -32,9 +32,31 @@
 
       <div class="stuff">
         <div>
+
+          <form class="form" action="/home" method="POST">
+            <!-- <input type="button" name="Yes" value="Yes"> -->
+            <!-- <input type="button" name="No" value="No"> -->
+            <h4>Enter song title:</h4>
+            <input type="text" name="songIdTextBox">
+            <!-- <h4>Add this song?</h4> -->
+            <!-- <input type="text" name="yesorno"> -->
+          </form>
+          <h3>Your song:</h3>
           <h4>{{name}}</h4>
           <h4>{{artist}}</h4>
           <h4>{{id}}</h4>
+          <h4>{{good_songs}}</h4>
+
+
+          <h3>Reccomended songs:</h3>
+          <ul id="recommended">
+            {% for item in rec_songs %}
+            <input type="checkbox" name={{item}}>{{item}}
+            <br>
+          {% endfor %}
+          <input type="button" name="submit" value="Submit">
+          </ul>
+
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

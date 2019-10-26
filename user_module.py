@@ -35,12 +35,14 @@ class User:
         for i, t in enumerate(results['tracks']['items']):
             print('\n' + str(i) + '\n' + repr(Song(t)))
 
-        chosen_song = input('\nWhich song? \n>>> ')
+        # chosen_song = input('\nWhich song? \n>>> ')
+        chosen_song = 0;
 
         return results['tracks']['items'][int(chosen_song)]
 
     def choose_song(self):
-        song_id = input('\nEnter the name of a song!\n>>> ')
+        # song_id = input('\nEnter the name of a song!\n>>> ')
+        song_id = "Marry Me"
 
         if song_id == 'exit': # escape sequence (back button, etc)
             sys.exit()
