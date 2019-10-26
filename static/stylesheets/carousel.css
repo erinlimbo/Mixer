@@ -12,6 +12,11 @@
 .page #carousel{
   width: 70%;
   align-self: center;
-  height: 50px;
+  height: 400px;
   border: 1px solid black
+}
+.picture{
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
 }
