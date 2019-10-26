@@ -51,6 +51,11 @@ def profile():
 
     return render_template('profile.html')
 
+@app.route('/login')
+def profile():
+
+    return render_template('login.html')
+
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
