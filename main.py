@@ -165,6 +165,7 @@ def root():
         name = initial.name
         id = initial.id
         artist = initial.artist_name
+        image = initial.image
         good_songs = good_songs
         rec_songs = rec_songs
 
@@ -191,7 +192,7 @@ def root():
         # for doc in docs:
         #     print(u'{} => {}'.format(doc.id, doc.to_dict()))
 
-        return render_template('home.html', name=name, id=id, artist=artist, good_songs = good_songs, rec_songs = rec_songs)
+        return render_template('home.html', name=name, id=id, artist=artist, image=image, good_songs = good_songs, rec_songs = rec_songs)
 
     if request.method == 'GET':
         name = "test"
