@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Datastore and Firebase Auth Example</title>
-    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
-    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='home.css') }}"> -->
-    <link rel="stylesheet" href="../static/home.css">
+
+    <link rel="stylesheet" href="../static/stylesheets/home.css">
+    <link rel="stylesheet" href="../static/stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mixer</title>
+    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/home.css') }}"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/stylesheets/header.css') }}"> -->
+
   </head>
   <body>
 
@@ -14,9 +18,7 @@
           <i class="fa fa-bars"></i>
         </button>
 
-      <div id='title'>
-        Mixer
-      </div>
+      <div id='title'>Mixer</div>
 
       <button type="button" id="login">login</button>
     </div>
@@ -24,8 +26,8 @@
     <div class="page">
       <div id="sidebar">
         <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-          <button type="button" name="profile"><a href="#">Profile</a></button>
-          <button type="button" name="library"><a href="#">Library</a></button>
+          <button type="button" name="profile"><a href="/profile">Profile</a></button>
+          <button type="button" na  me="library"><a href="#">Library</a></button>
       </div>
 
       <div class="stuff">
@@ -51,7 +53,8 @@
 
     </div>
 
+    <!-- <script src="{{ url_for('static', filename='scripts/script.js') }}"></script> -->
 
-    <script type="text/javascript" src = '../static/script.js'></script>
+    <script type="text/javascript" src = '../static/scripts/script.js'></script>
   </body>
 </html>

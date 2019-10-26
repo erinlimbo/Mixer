@@ -3,14 +3,16 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/home')
 def root():
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
-
-    
     return render_template('home.html')
 
+@app.route('/profile')
+def profile():
+
+    return render_template('profile.html')
 
 
 if __name__ == '__main__':
