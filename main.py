@@ -6,15 +6,11 @@ from firebase_admin import firestore
 from user_module import *
 from flask import request
 
-
-
-# import spotify_test.py
-# import user_module.py
 import sys
 import spotipy
 import spotipy.util as util
 from keys import *
-from user_module import *
+# from user_module import *
 
 
 app = Flask(__name__)
@@ -26,8 +22,6 @@ firebase_admin.initialize_app(cred, {
 })
 
 db = firestore.client()
-
-
 
 class User:
 
@@ -139,7 +133,6 @@ def root():
 
     if request.method == 'POST':
 
-
         # LOGIN SCREEN FUNCTIONS
         # user_id = input('Username:\n>>> ')
         user_id = "osnhoj"
@@ -176,7 +169,7 @@ def root():
         rec_songs = rec_songs
 
 
-        # FIREBASE STUFF
+        # FIREBASE STUFF; only dummy variables right now
         # doc_ref = db.collection(u'users').document(u'alovelace')
         # doc_ref.set({
         #     u'first': u'Ada',
