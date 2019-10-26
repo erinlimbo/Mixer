@@ -25,7 +25,6 @@
 
     <div class="page">
       <div id="sidebar">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
           <button type="button" name="profile"><a href="/profile">Profile</a></button>
           <button type="button" na  me="library"><a href="#">Library</a></button>
       </div>
@@ -36,8 +35,9 @@
           <form class="form" action="/home" method="POST">
             <h4>Enter song title:</h4>
             <input type="text" name="songIdTextBox">
-            <!-- <input type="button" name="sumbit song" value="Submit Song"> -->
+            <input type="submit" name="sumbit_song" value="Submit Song">
           </form>
+
           <h3>Your song:</h3>
           <h4>{{name}}</h4>
           <h4>{{artist}}</h4>
@@ -47,10 +47,10 @@
           <h3>Reccomended songs:</h3>
           <ul id="recommended">
             {% for item in rec_songs %}
-            <input type="checkbox" name={{item}}>{{item}}
+            <input type="checkbox" name={{item}}>{{item}}</input>
             <br>
           {% endfor %}
-          <input type="button" name="submit" value="Submit">
+          <input type="submit" name="submit_recs" value="Submit">
           </ul>
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -73,21 +73,6 @@
       </div>
 
     </div>
-
-    <!-- <script src="{{ url_for('static', filename='scripts/script.js') }}"></script> -->
-
-      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-      <!-- <script src="/firebase/7.2.2/firebase-app.js"></script> -->
-
-      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-      <!-- <script src="/firebase/7.2.2/firebase-analytics.js"></script> -->
-
-      <!-- Add Firebase products that you want to use -->
-      <!-- <script src="/firebase/7.2.2/firebase-auth.js"></script> -->
-      <!-- <script src="/firebase/7.2.2/firebase-firestore.js"></script> -->
-      <!-- <script src="/firebase/init.js"></script> -->
-
     <script type="text/javascript" src = '../static/scripts/script.js'></script>
   </body>
 </html>
