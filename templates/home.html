@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="../static/stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Mixer</title>
-    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/home.css') }}"> -->
-    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/stylesheets/header.css') }}"> -->
 
   </head>
   <body>
@@ -26,7 +24,6 @@
 
     <div class="page">
       <div id="sidebar">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
           <button type="button" name="profile"><a href="/profile">Profile</a></button>
           <button type="button" na  me="library"><a href="#">Library</a></button>
       </div>
@@ -62,7 +59,29 @@
         </div>
 
 
-        <div>
+
+          <form class="form" action="/home" method="POST">
+            <h4>Enter song title:</h4>
+            <input type="text" name="songIdTextBox">
+            <input type="submit" name="sumbit_song" value="Submit Song">
+          </form>
+
+          <h3>Your song:</h3>
+          <h4>{{name}}</h4>
+          <h4>{{artist}}</h4>
+          <h4>{{id}}</h4>
+          <img src="{{image}}" alt="song cover">
+          <h4>{{good_songs}}</h4>
+
+          <h3>Reccomended songs:</h3>
+          <ul id="recommended">
+            {% for item in rec_songs %}
+            <input type="checkbox" name={{item}}>{{item}}</input>
+            <br>
+          {% endfor %}
+          <input type="submit" name="submit_recs" value="Submit">
+          </ul>
+          <div>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -85,9 +104,6 @@
       </div>
 
     </div>
-
-    <!-- <script src="{{ url_for('static', filename='scripts/script.js') }}"></script> -->
-
     <script type="text/javascript" src = '../static/scripts/script.js'></script>
     <script type="text/javascript" src = '../static/scripts/home.js'></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

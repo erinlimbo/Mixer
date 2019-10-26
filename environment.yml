@@ -1,0 +1,9 @@
+name: mixr_test
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - pytorch
+  - 
+prefix: C:\Users\john\.conda\envs\mixr_test
+
