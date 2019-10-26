@@ -1,7 +1,15 @@
-'use strict';
+let sideBar = document.querySelector('#sidebar')
+document.querySelector('#openSideBar').addEventListener('click', function(){
+  openSide()
+})
 
-window.addEventListener('load', function () {
 
-  console.log("Hello World!");
 
-});
+
+const openSide = () => {
+  if (sideBar.style.width == "100px") {
+    sideBar.style.width = "0px"
+  } else {
+    sideBar.style.width = "100px";
+  }
+}

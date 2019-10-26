@@ -2,12 +2,56 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Datastore and Firebase Auth Example</title>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='home.css') }}"> -->
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
-    <p>hello world</p>
+    <div class="header">
+        <button type="button" id="openSideBar">
+          <i class="fa fa-bars"></i>
+        </button>
 
+      <div id='title'>
+        Mixer
+      </div>
+
+      <button type="button" id="login">login</button>
+    </div>
+
+    <div class="page">
+      <div id="sidebar">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+          <button type="button" name="profile"><a href="#">Profile</a></button>
+          <button type="button" name="library"><a href="#">Library</a></button>
+      </div>
+
+      <div class="stuff">
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+
+    </div>
+
+
+    <script type="text/javascript" src = '../static/script.js'></script>
   </body>
 </html>
