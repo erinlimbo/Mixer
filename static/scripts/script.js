@@ -1,3 +1,4 @@
+
 let sideBar = document.querySelector('#sidebar')
 document.querySelector('#openSideBar').addEventListener('click', function(){
   openSide()

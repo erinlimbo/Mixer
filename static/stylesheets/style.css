@@ -5,7 +5,7 @@ body {
   flex-direction: column   !important;
   justify-content: center  !important;
   margin: 3% auto          !important;
-  background-image: linear-gradient(#cfbfec 10%, #84CEEB 20%, #5AB9EA 20%, #84CEEB 20%, #cfbfec);
+  background-image: linear-gradient(white 10%, #84CEEB 20%, #5AB9EA 20%, #84CEEB 20%, white);
   color: white;
 }
 

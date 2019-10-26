@@ -16,6 +16,22 @@
 
 }
 
+
+.modal-content{
+  color: #56baed;
+}
+.modal-header{
+  justify-content: center !important;
+}
+
+.modal-footer {
+  justify-content: space-between !important;
+}
+.btn {
+  background-color: #56baed !important;
+  border: none;
+}
+
 #sidebar {
   height: 80%;
   display: flex;
@@ -48,8 +64,4 @@
   display: flex;
   flex-direction: column;
   width: 60%;
-}
-
-.stuff div {
-
 }
