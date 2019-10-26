@@ -52,7 +52,7 @@ def profile():
     return render_template('profile.html')
 
 @app.route('/login')
-def profile():
+def login():
 
     return render_template('login.html')
 
