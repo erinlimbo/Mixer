@@ -4,6 +4,9 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
+import spotify_test.py
+import user_module.py
+
 app = Flask(__name__)
 
 # Use the application default credentials
