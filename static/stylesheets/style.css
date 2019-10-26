@@ -5,12 +5,20 @@ body {
   flex-direction: column   !important;
   justify-content: center  !important;
   margin: 3% auto          !important;
+  background-image: linear-gradient(#cfbfec 10%, #84CEEB 20%, #5AB9EA 20%, #84CEEB 20%, #cfbfec);
+  color: white;
+}
+
+html{
+  height: 120%;
+  width: 100%;
 }
 
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-align: center;
   height: 75px;
   width: 100%;
   padding-bottom: 10%;
@@ -24,7 +32,6 @@ body {
   margin: 20px;
   height: 50px;
   width: 50px;
-  border: 1px solid black;
 }
 #openSideBar:hover {
   transform: scale(1.3);
@@ -36,11 +43,14 @@ body {
 #title {
   align-self: center;
   font-size: 50px;
+  color: #lightBlue;
+  text-decoration: none;
 }
 
 #login {
   height: 40px;
   width: 80px;
+  margin: 20px;
 }
 
 

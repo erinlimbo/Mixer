@@ -33,24 +33,23 @@
   border: 1px solid black;
   height: 50px;
   width: 100%;
-}
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+  align-self: center;
 }
 
+#discover {
+  border-radius: 20px;
+  width: 40%;
+  height: 40px;
+  outline: none;
+  margin-bottom: 6%;
+}
 
 .stuff {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   width: 60%;
 }
 
 .stuff div {
-  border: 1px solid black;
+
 }
