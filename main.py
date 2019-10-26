@@ -7,7 +7,12 @@ app = Flask(__name__)
 def root():
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
-    return render_template('home.html')
+
+    name = "Wagon Wheel"
+    id = 12325
+    artist = "Darius Rucker"
+
+    return render_template('home.html', name=name, id=id, artist=artist)
 
 @app.route('/profile')
 def profile():
