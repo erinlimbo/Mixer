@@ -71,11 +71,7 @@ class Song:
         self.artist_name = self.artist['name']
 
     def __repr__(self):
-        return (
-            'NAME: ' + self.name +
-            '\nARTIST: ' + self.artist_name +
-            '\nID: ' + self.id
-            )
+        return ('"{0}", {1}'.format(self.name, self.artist_name))
 
     def find_playlists(self, user, lim = 10):
         results = user.sp.search(self.name, limit = lim, type='playlist')
