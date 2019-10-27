@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 <head>
-  <title>Profile</title>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <title>About Us</title>
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/bootstrap/css/bootstrap.css') }}">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <!-- <link rel="stylesheet" href="../static/stylesheets/profile.css">
   <link rel="stylesheet" href="../static/stylesheets/style.css"> -->
 
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/profile.css') }}">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/about.css') }}">
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
 
 </head>
@@ -16,17 +15,26 @@
 
 
     <div class="header">
-        <button type="button" id="openSideBar">
-          <i class="fa fa-bars"></i>
-        </button>
+        <a href="/home"><img id='logo' src="/static/images/infinity11.png" width='200px' height='125px'alt="logo"></a>
 
-      <div id='title'>
-        Mixer
-      </div>
-
-      <button type="button" id="login">login</button>
     </div>
 
+  <div class="container">
+    <div class="profiles">
+      <div id="erin">
+        Erin Lbim
+      </div>
+      <div id="ashlee">
+        Ashlee Kupor
+      </div>
+      <div id="Isaac">
+        Isaac Anastasoff
+      </div>
+      <div id="john">
+        John Ian So
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>

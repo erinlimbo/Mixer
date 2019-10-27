@@ -1,21 +1,18 @@
 
 
 body {
-  padding-top: 25px;
   font-family: "helvetica", sans-serif;
   text-align: center       !important;
   display: flex            !important;
   flex-direction: column   !important;
   justify-content: center  !important;
-  margin: 3% auto          !important;
   background-image: linear-gradient(white 10%, #84CEEB 20%, #5AB9EA 20%, #84CEEB 20%, white);
   color: white;
 }
 
 html{
-  height: 120%;
+  height: 100%;
   width: 100%;
-
 }
 
 .header {
@@ -47,6 +44,7 @@ html{
 #logo {
   height: 100px;
   width: 200px;
+
 }
 
 
@@ -61,11 +59,11 @@ html{
   height: 80%;
   display: flex;
   flex-direction: column;
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  /* top: 0; */
-  left: 0; /* Stay at the top */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
   overflow-x: hidden;
   transition: .6s;
   border: 1px solid black;

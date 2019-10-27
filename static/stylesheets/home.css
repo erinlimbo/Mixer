@@ -1,12 +1,10 @@
-
-
-
 .page{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  height: 800px;
   padding-top: 30px;
 }
 
@@ -19,12 +17,16 @@
   justify-content: center;
 }
 .carousel-inner {
+  display: flex;
+  flex-direction: row;
   width: 60% !important;
+  align-items: center;
+  height: 100%;
 }
 .picture{
   border: 1px solid black;
-  height: 100px;
-  width: 100px;
+  height: 250px;
+  width: 100%;
 }
 
 .modal-content{
@@ -46,40 +48,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-
-
-
-
-#sidebar {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  /* top: 0; */
-  left: 0; /* Stay at the top */
-  overflow-x: hidden;
-  transition: .6s;
-  border: 1px solid black;
-}
-#sidebar button {
-  border: 1px solid black;
-  height: 50px;
   width: 100%;
-  align-self: center;
+  font-size: 60px;
+  border-radius: 20px;
 }
 
-#discover {
-  border-radius: 20px;
-  width: 40%;
-  height: 40px;
-  outline: none;
-  margin-bottom: 6%;
-}
 
 .stuff {
   display: flex;

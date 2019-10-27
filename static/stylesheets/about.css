@@ -1,0 +1,13 @@
+.header {
+
+  display: inline-block !important;
+  text-align: center;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  border: 1px solid black;
+}

@@ -150,16 +150,14 @@ def root():
         for i in range(10):
             curr_song = next(recommended)
             rec_songs.append(curr_song)
-            # add = request.form['yesorno']
-            # if (add == "yes"):
-            # good_songs.append(curr_song)
-            # print(curr_song)
-            # swipe = input('[y]/[n]\n>>> ')
-            #
-            # if swipe == 'y':
-            #     good_songs.append(curr_song)
-            #
-            # print(good_songs, '\n')
+            add = request.form['yesorno']
+            if (add == "yes"):
+                good_songs.append(curr_song)
+                print(curr_song)
+            swipe = input('[y]/[n]\n>>> ')
+            if swipe == 'y':
+                good_songs.append(curr_song)
+            print(good_songs, '\n')
 
 
         name = initial.name
@@ -202,10 +200,10 @@ def root():
         return render_template('home.html', name=name, id=id, artist=artist, good_songs = good_songs)
 
 
-@app.route('/profile')
+@app.route('/about')
 def profile():
 
-    return render_template('profile.html')
+    return render_template('about.html')
 
 @app.route('/login')
 def login():
