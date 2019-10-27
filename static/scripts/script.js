@@ -4,7 +4,6 @@ document.querySelector('#openSideBar').addEventListener('click', function(){
   openSide()
 })
 
-
 const openSide = () => {
   if (sideBar.style.width != "0px") {
     sideBar.style.width = "0px"

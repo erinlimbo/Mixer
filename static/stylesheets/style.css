@@ -1,4 +1,7 @@
+
+
 body {
+  padding-top: 25px;
   font-family: "helvetica", sans-serif;
   text-align: center       !important;
   display: flex            !important;
@@ -12,6 +15,7 @@ body {
 html{
   height: 120%;
   width: 100%;
+
 }
 
 .header {
@@ -40,12 +44,11 @@ html{
   transform: translate(-2px,2px);
 }
 
-#title {
-  align-self: center;
-  font-size: 50px;
-  color: #lightBlue;
-  text-decoration: none;
+#logo {
+  height: 100px;
+  width: 200px;
 }
+
 
 #login {
   height: 40px;

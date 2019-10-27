@@ -20,7 +20,7 @@
           <i class="fa fa-bars"></i>
         </button>
 
-      <div id='title'><a href="/home">Mixer</a></div>
+        <a href="/home"><img id='logo' src="/static/images/infinity11.png" width='200px' height='125px'alt="logo"></a>
 
       <button type="button" id="login">login</button>
     </div>
@@ -28,22 +28,65 @@
     <div class="page">
       <div id="sidebar">
           <button type="button" name="profile"><a href="/profile">Profile</a></button>
-          <button type="button" na  me="library"><a href="#">Library</a></button>
+          <button type="button" name="library"><a href="#">Library</a></button>
       </div>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <div class="carousel-inner">
+            <div class="carousel-item">
+              <div class='picture'></div>
+            </div>
+
+            <div class="carousel-item active">
+              <!-- <img class="d-block w-100" src='/../../../ForestHills'alt="..."> -->
+              <div class='picture'></div>
+            </div>
+            <div class="carousel-item">
+              <div class='picture'></div>
+            < /div>
+          </div>
+
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div id='form-container'>
+        <form class="form" action="/home" method="POST">
+          <h4>Enter song title:</h4>
+          <input type="text" name="songIdTextBox" required>
+          <input type="submit" onclick='carousel()' name="sumbit_song" value="Submit Song" >
+        </form>
+
+
+        <!-- <h3>Reccomended songs:</h3> -->
+        <!-- <ul id="recommended">
+          {% for item in rec_songs %}
+          <input type="checkbox" name={{item}}>{{item}}</input>
+          <br>
+        {% endfor %}
+        <input type="submit" name="submit_recs" value="Submit"> -->
+        <!-- </ul> -->
+      </div>
+
+    </div>
 
 
 
       <div class="stuff">
-        <div>
-          <button type="button" id="discover">Discover Songs</button>
-        </div>
+
 
         <div class="modal fade" id='homeWelcome' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <div><h5 class="modal-title" id="modalTitle"> Missing Semicolon!</h5></div>
-                <button type="button" onclick='checker()' class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -55,7 +98,7 @@
                   <input type="checkbox" class='checkbox' id="check" value="Don't Show me again" />
                    Don't Show me again
                 </div> -->
-                <button type="button" onclick='checker()' class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -63,58 +106,20 @@
 
 
 
-          <form class="form" action="/home" method="POST">
-            <h4>Enter song title:</h4>
-            <input type="text" name="songIdTextBox">
-            <input type="submit" name="sumbit_song" value="Submit Song">
-          </form>
-
-          <h3>Your song:</h3>
-          <h4>{{name}}</h4>
-          <h4>{{artist}}</h4>
-          <h4>{{id}}</h4>
-          <img src="{{image}}" alt="song cover">
-          <h4>{{good_songs}}</h4>
-
-          <h3>Reccomended songs:</h3>
-          <ul id="recommended">
-            {% for item in rec_songs %}
-            <input type="checkbox" name={{item}}>{{item}}</input>
-            <br>
-          {% endfor %}
-          <input type="submit" name="submit_recs" value="Submit">
-          </ul>
-          <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
 
 
       </div>
 
-    </div>
+
     <!-- <script type="text/javascript" src = '../static/scripts/script.js'></script>
     <script type="text/javascript" src = '../static/scripts/home.js'></script> -->
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/scripts/script.js') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/scripts/home.js') }}">
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/home.js') }}"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='stylesheets/bootstrap/js/bootstrap.js') }}"></script>
 
   </body>
 </html>
