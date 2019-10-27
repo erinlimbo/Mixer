@@ -6,6 +6,7 @@ from flask import Flask, render_template
 from user_module import *
 from flask import request
 
+import json
 import sys
 import spotipy
 import spotipy.util as util
@@ -64,14 +65,15 @@ class User:
         if song_id == 'exit': # escape sequence (back button, etc)
             sys.exit()
 
-        self.input_song = Song(self.search(song_id, 5)) # determine the song2
+        self.input_song = Song(self.search(song_id)) # determine the song2
         return self.input_song
 
     def generate_recommendations(self, song, artist):
-        recommendations = self.sp.recommendations([song.id], artist.genres, [self.input_song.id])['tracks']
+        recommendations = [Song(x) for x in self.sp.recommendations([song.id], artist.genres, [self.input_song.id])['tracks']]
 
-        for i in range(len(recommendations)):
-            yield Song(recommendations[i])
+        # for i in range(len(recommendations)):
+        #     yield Song(recommendations[i])
+        return recommendations
 
     def __repr__(self):
         return '\nUSER: {0}'.format(self.user) + '\nID: {0}'.format(self.id)
@@ -89,7 +91,8 @@ class Song:
         self.artist_name = self.artist['name']
 
     def __repr__(self):
-        return ('"{0}", {1}'.format(self.name, self.artist_name))
+        # return ('"{0}", {1}'.format(self.name, self.artist_name))
+        return self.name
 
     def find_playlists(self, user, lim = 10):
         results = user.sp.search(self.name, limit = lim, type='playlist')
@@ -129,7 +132,7 @@ class Artist:
 
 @app.route('/home', methods=['GET', 'POST'])
 def root():
-    good_songs = []
+    rec_songs = []
 
     if request.method == 'POST':
 
@@ -142,30 +145,45 @@ def root():
         initial = user.choose_song()
         initial_artist = Artist(initial, user)
 
-        good_songs.append(initial)
+        rec_songs.append(initial)
 
         # GENERATING 10 'MOST SIMILAR' SONGS (aka training data!)
-        recommended = user.generate_recommendations(initial, initial_artist)
-        rec_songs = []
-        for i in range(10):
-            curr_song = next(recommended)
-            rec_songs.append(curr_song)
-            add = request.form['yesorno']
-            if (add == "yes"):
-                good_songs.append(curr_song)
-                print(curr_song)
-            swipe = input('[y]/[n]\n>>> ')
-            if swipe == 'y':
-                good_songs.append(curr_song)
-            print(good_songs, '\n')
+        rec_songs.extend(user.generate_recommendations(initial, initial_artist))
+
+        print(rec_songs)
+
+        # for i in range(10):
+        #     curr_song = next(recommended)
+        #     rec_songs.append(curr_song)
+            # add = request.form['yesorno']
+            # if (add == "yes"):
+            #     good_songs.append(curr_song)
+            #     print(curr_song)
+            # swipe = input('[y]/[n]\n>>> ')
+            # if swipe == 'y':
+            #     good_songs.append(curr_song)
+            # print(good_songs, '\n')
 
 
         name = initial.name
         id = initial.id
         artist = initial.artist_name
         image = initial.image
-        good_songs = good_songs
+
         rec_songs = rec_songs
+        song_urls = [song.image for song in rec_songs]
+        song_artists = [song.artist_name for song in rec_songs]
+        song_names = [song.name for song in rec_songs]
+        song_ids = [song.id for song in rec_songs]
+        song_images = [song.image for song in rec_songs]
+        dict = {
+        'rec_songs': rec_songs,
+        'song_urls' : [song.image for song in rec_songs],
+        'song-artists' : [song.artist_name for song in rec_songs],
+        'song_names' : [song.name for song in rec_songs],
+        'song_ids' : [song.id for song in rec_songs],
+        'song_images': [song.image for song in rec_songs]
+        }
 
 
         # FIREBASE STUFF; only dummy variables right now
@@ -190,7 +208,7 @@ def root():
         # for doc in docs:
         #     print(u'{} => {}'.format(doc.id, doc.to_dict()))
 
-        return render_template('home.html', name=name, id=id, artist=artist, image=image, good_songs = good_songs, rec_songs = rec_songs)
+        return render_template('home.html', dict=dict, name=name, id=id, song_ids = map(json.dumps,song_ids), artist=artist, images= song_images[0], rec_songs = rec_songs)
 
     if request.method == 'GET':
         name = "test"

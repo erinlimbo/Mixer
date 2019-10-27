@@ -25,8 +25,10 @@
 }
 .picture{
   border: 1px solid black;
-  height: 250px;
+  height: 250px; white
   width: 100%;
+  background-color: white;
+  color: black;
 }
 
 .modal-content{

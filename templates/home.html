@@ -28,6 +28,7 @@
           <button type="button" name="library"><a href="#">Library</a></button>
       </div>
 
+      <img src="{{images}}">
     <div id="carousel" class="carousel slide" data-wrap='false' data-ride="carousel">
         <a class="carousel-control-prev" href="#carousel" role="button" data-wrap='false' data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -36,7 +37,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item">
-              <div class='picture'>
+              <div class='picture'><img src="{{image}}" alt="song cover">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Song Title</h5>
                   <p>Artist</p>
@@ -45,7 +46,7 @@
             </div>
 
             <div class="carousel-item active">
-              <div class='picture'>
+              <div class='picture'><img src="{{image}}" alt="song cover">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Song Title</h5>
                   <p>Artist</p>
@@ -95,7 +96,6 @@
 
       <div class="stuff">
 
-
         <div class="modal fade" id='homeWelcome' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -130,6 +130,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='stylesheets/bootstrap/js/bootstrap.js') }}"></script>
-
+    <script type="text/javascript">
+      var myJSON = '{{dict}}';
+      var myObj = JSON.parse(myJSON);
+      const tester = () => {
+        console.log(myObj.song_urls);
+      }
+    </script>
   </body>
 </html>
