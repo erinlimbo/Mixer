@@ -4,14 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="../static/stylesheets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../static/stylesheets/carousel.css">
     <link rel="stylesheet" href="../static/stylesheets/style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/stylesheets/carousel.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/stylesheets/style.css') }}">
-
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/carousel.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
       <title>carousel</title>
 
 
@@ -32,7 +31,6 @@
 
     <div class="page">
       <div id="sidebar">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
           <button type="button" name="profile"><a href="/profile">Profile</a></button>
           <button type="button" na  me="library"><a href="#">Library</a></button>
       </div>
@@ -41,8 +39,7 @@
       <div id="carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item">
-            <!-- <img  class="d-block w-100" alt="...">
-           -->
+
            <div class='picture'></div>
 
           </div>

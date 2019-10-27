@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+# import firebase_admin
+# from firebase_admin import credentials
+# from firebase_admin import firestore
 from user_module import *
 from flask import request
 
@@ -16,12 +16,12 @@ from keys import *
 app = Flask(__name__)
 
 # Use the application default credentials
-cred = credentials.ApplicationDefault()
-firebase_admin.initialize_app(cred, {
-  'projectId': "musicmixer",
-})
+# cred = credentials.ApplicationDefault()
+# firebase_admin.initialize_app(cred, {
+#   'projectId': "musicmixer",
+# })
 
-db = firestore.client()
+# db = firestore.client()
 
 class User:
 
