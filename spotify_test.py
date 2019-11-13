@@ -5,7 +5,8 @@ from user_module import *
 good_songs = []
 
 # LOGIN SCREEN FUNCTIONS
-user_id = input('Username:\n>>> ')
+# user_id = input('Username:\n>>> ')
+user_id = "osnhoj" #need to do this as user input
 user = User(user_id)
 
 # INITIAL SEARCH FUNCTION
@@ -28,7 +29,7 @@ for i in range(10):
     swipe = input('[y]/[n]\n>>> ')
 
     if swipe == 'y':
-        good_songs.append(curr_song.name)
+        good_songs.append(curr_song)
 
     print(good_songs, '\n')
 #print('These playlists contain {0} by {1}:'.format(initial.name, initial.artist['name']))
